@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>CalezaGo - Seleccionar ubicaciones</title>
+    <title>Caleza - Seleccionar ubicación</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         body { margin: 0; padding: 0; font-family: sans-serif; }
@@ -49,44 +49,66 @@
             z-index: 1000;
             pointer-events: none;
         }
+        .auth-required {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            z-index: 2000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
     <div id="map"></div>
     <div class="controls">
         <button id="useLocation">📍 Mi ubicación</button>
+        <button id="reset">🔄 Reiniciar</button>
         <button id="send" disabled>📤 Enviar</button>
     </div>
     <div class="info" id="status">📍 Haz clic en el mapa para marcar el ORIGEN</div>
+    <div id="authRequired" class="auth-required" style="display: none;">
+        <h2>⚠️ Autenticación requerida</h2>
+        <p>Abre este enlace desde el bot de Telegram para usar el mapa.</p>
+        <p><a href="https://t.me/calezabot" target="_blank">Ir al bot</a></p>
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        const tg = window.Telegram.WebApp;
+        // Initialize Telegram WebApp
+        let tg = window.Telegram.WebApp;
         tg.expand();
+
+        // Map setup
         let map = L.map('map').setView([23.1136, -82.3666], 13);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+            attribution: '&copy; OpenStreetMap'
         }).addTo(map);
 
         let originMarker = null, destMarker = null;
         let originCoords = null, destCoords = null;
-        let step = 'origin'; // 'origin' or 'destination'
+        let step = 'origin';
 
         const statusDiv = document.getElementById('status');
         const sendBtn = document.getElementById('send');
         const locationBtn = document.getElementById('useLocation');
+        const resetBtn = document.getElementById('reset');
 
         function updateUI() {
             if (originCoords && destCoords) {
                 sendBtn.disabled = false;
-                statusDiv.innerText = '✅ Origen y destino seleccionados. ¡Listo para enviar!';
+                statusDiv.innerText = '✅ Origen y destino seleccionados. ¡Listo!';
             } else if (originCoords) {
                 sendBtn.disabled = true;
-                statusDiv.innerText = '📍 Origen fijado. Ahora haz clic en el mapa para marcar el DESTINO';
+                statusDiv.innerText = '📍 Origen fijado. Haz clic para marcar DESTINO';
             } else {
                 sendBtn.disabled = true;
-                statusDiv.innerText = '📍 Haz clic en el mapa para marcar el ORIGEN';
+                statusDiv.innerText = '📍 Haz clic para marcar ORIGEN';
             }
         }
 
@@ -97,28 +119,32 @@
                 originMarker = marker;
                 originCoords = { lat, lng };
                 step = 'destination';
-                updateUI();
                 marker.on('dragend', function(e) {
-                    const pos = marker.getLatLng();
-                    originCoords = { lat: pos.lat, lng: pos.lng };
-                    updateUI();
+                    originCoords = { lat: e.target.getLatLng().lat, lng: e.target.getLatLng().lng };
                 });
             } else {
                 if (destMarker) map.removeLayer(destMarker);
                 destMarker = marker;
                 destCoords = { lat, lng };
                 step = 'done';
-                updateUI();
                 marker.on('dragend', function(e) {
-                    const pos = marker.getLatLng();
-                    destCoords = { lat: pos.lat, lng: pos.lng };
-                    updateUI();
+                    destCoords = { lat: e.target.getLatLng().lat, lng: e.target.getLatLng().lng };
                 });
-                if (originCoords && destCoords) {
-                    const bounds = L.latLngBounds([originCoords, destCoords]);
-                    map.fitBounds(bounds, { padding: [50, 50] });
-                }
+                const bounds = L.latLngBounds([originCoords, destCoords]);
+                setTimeout(() => map.fitBounds(bounds, { padding: [50, 50] }), 100);
             }
+            updateUI();
+        }
+
+        function resetSelection() {
+            if (originMarker) map.removeLayer(originMarker);
+            if (destMarker) map.removeLayer(destMarker);
+            originMarker = null;
+            destMarker = null;
+            originCoords = null;
+            destCoords = null;
+            step = 'origin';
+            updateUI();
         }
 
         map.on('click', (e) => {
@@ -130,76 +156,46 @@
         });
 
         locationBtn.onclick = () => {
-            if ('geolocation' in navigator) {
-                navigator.geolocation.getCurrentPosition((pos) => {
-                    const lat = pos.coords.latitude;
-                    const lng = pos.coords.longitude;
-                    map.setView([lat, lng], 15);
-                    if (step === 'origin') {
-                        setMarker('origin', lat, lng);
-                    } else if (step === 'destination') {
-                        setMarker('destination', lat, lng);
-                    }
-                }, (err) => {
-                    alert('No se pudo obtener tu ubicación: ' + err.message);
-                });
-            } else {
-                alert('Geolocalización no soportada');
-            }
+            navigator.geolocation.getCurrentPosition((pos) => {
+                const lat = pos.coords.latitude;
+                const lng = pos.coords.longitude;
+                map.setView([lat, lng], 15);
+                if (step === 'origin') {
+                    setMarker('origin', lat, lng);
+                } else if (step === 'destination') {
+                    setMarker('destination', lat, lng);
+                }
+            });
         };
+
+        resetBtn.onclick = resetSelection;
 
         sendBtn.onclick = () => {
-            if (originCoords && destCoords) {
-                sendBtn.disabled = true;
-                locationBtn.disabled = true;
-                statusDiv.innerText = 'Enviando datos al bot...';
-
-                const data = {
-                    origin: originCoords,
-                    destination: destCoords
-                };
-                console.log('🔥 DEBUG: About to call tg.sendData with:', data);
-                console.log('🔥 DEBUG: tg object:', tg);
-                console.log('🔥 DEBUG: tg.sendData function:', typeof tg.sendData);
-                try {
-                    tg.sendData(JSON.stringify(data));
-                    console.log('✅ WebApp data enviada exitosamente:', data);
-                } catch (e) {
-                    const errorText = e && e.message ? e.message : e;
-                    console.error('❌ Error en tg.sendData:', e);
-                    alert('No se pudo enviar al bot: ' + errorText);
-                    sendBtn.disabled = false;
-                    locationBtn.disabled = false;
-                    statusDiv.innerText = 'Error al enviar. Reintenta.';
-                    return;
-                }
-
-                // Dejar al usuario cerrar la ventana, pero también autocierrar tras 2s.
-                statusDiv.innerText = '✅ Datos enviados. Puedes cerrar este panel.';
-                setTimeout(function () {
-                    try {
-                        tg.close();
-                    } catch (e) {
-                        console.warn('No se pudo cerrar WebApp automáticamente, cierra manualmente', e);
-                    }
-                }, 2000);
-            } else {
-                alert('Debes seleccionar origen y destino antes de enviar.');
+            if (!originCoords || !destCoords) {
+                alert('Selecciona origen y destino');
+                return;
             }
+
+            const data = {
+                origin_address: `Lat: ${originCoords.lat.toFixed(4)}, Lng: ${originCoords.lng.toFixed(4)}`,
+                destination_address: `Lat: ${destCoords.lat.toFixed(4)}, Lng: ${destCoords.lng.toFixed(4)}`,
+                origin_coords: originCoords,
+                destination_coords: destCoords,
+                client_name: '',
+                client_username: '',
+                details: '',
+                vehicle_type: null,
+                vehicle_category: null,
+                manual_text_only: false
+            };
+
+            statusDiv.innerText = '⏳ Enviando...';
+            sendBtn.disabled = true;
+            
+            tg.sendData(JSON.stringify(data));
         };
 
-        tg.ready();
-        console.log('WebApp lista. WebApp.initData:', tg.initData);
-        
-        // Verificar que estamos dentro de Telegram
-        if (!tg.initData) {
-            console.warn('⚠️ WebApp no está corriendo dentro de Telegram');
-            document.getElementById('status').innerText = '⚠️ Esta página solo funciona dentro de Telegram';
-            document.getElementById('send').disabled = true;
-            document.getElementById('useLocation').disabled = true;
-        } else {
-            console.log('✅ WebApp corriendo dentro de Telegram');
-        }
+        updateUI();
     </script>
 </body>
 </html>
