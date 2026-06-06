@@ -16,6 +16,24 @@ window.CALESA_VERIFIED_DRIVERS = [
     telegramUrl: "https://t.me/CalesaGoBot",
     photo: "assets/rolando-fuentes-profile.jpg",
     vehiclePhoto: "assets/rolando-fuentes-triciclo-electrico.png"
+  },
+  {
+    id: "restringid",
+    active: true,
+    name: "Restringid",
+    headline: "Chofer verificado de Calesa en San Agustin, La Lisa",
+    city: "San Agustin, La Lisa",
+    serviceZones: ["San Agustin", "La Lisa", "La Habana"],
+    vehicle: "Murazaky XS3 scooter",
+    vehicleDetails: "Servicio en scooter Murazaky XS3, matricula V00343, para movilidad local y rutas cortas en San Agustin y La Lisa.",
+    experience: "Chofer disponible para clientes que buscan movilidad practica en San Agustin, La Lisa y zonas cercanas.",
+    verifiedSince: "2026",
+    languages: ["Espanol"],
+    strengths: ["Conoce San Agustin", "Movilidad local", "Scooter Murazaky XS3", "Matricula V00343"],
+    bio: "Restringid trabaja principalmente en San Agustin, La Lisa. Conduce un scooter Murazaky XS3 y ofrece movilidad local practica para rutas cortas en la zona.",
+    telegramUrl: "https://t.me/CalesaGoBot",
+    photo: "assets/restringid-profile.png",
+    vehiclePhoto: "assets/restringid-murazaky-xs3.png"
   }
 
   /*
