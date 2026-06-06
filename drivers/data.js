@@ -14,7 +14,7 @@ window.CALESA_VERIFIED_DRIVERS = [
     strengths: ["Conoce Guanabo", "Movilidad local", "Triciclo electrico"],
     bio: "Rolando Fuentes trabaja principalmente en Guanabo, Habana del Este. Conduce triciclo electrico y ofrece movilidad local practica para rutas cortas en la zona.",
     telegramUrl: "https://t.me/CalesaGoBot",
-    photo: "assets/rolando-fuentes-profile.jpg",
+    photo: "assets/rolando-fuentes-profile-20260606.png",
     vehiclePhoto: "assets/rolando-fuentes-triciclo-electrico.png"
   },
   {
