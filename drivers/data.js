@@ -38,7 +38,7 @@ window.CALESA_VERIFIED_DRIVERS = [
   {
     id: "managua-arroyo-naranjo",
     active: true,
-    name: "Lizandro Guzman Hermandez",
+    name: "Lizandro Guzman Hernandez",
     headline: "Chofer verificado de Calesa en Managua, Arroyo Naranjo",
     city: "Managua, Arroyo Naranjo",
     serviceZones: ["Managua", "Arroyo Naranjo", "La Habana"],
@@ -48,7 +48,7 @@ window.CALESA_VERIFIED_DRIVERS = [
     verifiedSince: "2026",
     languages: ["Espanol"],
     strengths: ["Conoce Managua", "Arroyo Naranjo", "Auto Chevrolet 1952", "Matricula P086181", "Servicio basico"],
-    bio: "Lizandro Guzman Hermandez trabaja como chofer de Calesa en Managua, Arroyo Naranjo. Conduce un Chevrolet 1952 rojo y ofrece servicio basico para rutas locales en La Habana.",
+    bio: "Lizandro Guzman Hernandez trabaja como chofer de Calesa en Managua, Arroyo Naranjo. Conduce un Chevrolet 1952 rojo y ofrece servicio basico para rutas locales en La Habana.",
     telegramUrl: "https://t.me/CalesaGoBot",
     photo: "assets/managua-arroyo-naranjo-profile.png",
     vehiclePhoto: "assets/managua-arroyo-naranjo-chevrolet-1952.png"
