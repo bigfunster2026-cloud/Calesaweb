@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es" data-driver-id="lizandro-guzman-hernandez">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<base href="../" />
+<title>Lizandro Guzman Hernandez | Chofer Calesa</title>
+<meta name="description" content="Landing publica de Lizandro Guzman Hernandez, chofer de Calesa en Managua, Arroyo Naranjo, con Chevrolet 1952 rojo." />
+<meta property="og:title" content="Lizandro Guzman Hernandez | Chofer Calesa" />
+<meta property="og:description" content="Chofer verificado de Calesa en Managua, Arroyo Naranjo. Chevrolet 1952 rojo, servicio basico." />
+<meta property="og:image" content="https://bigfunster2026-cloud.github.io/Calesaweb/drivers/assets/managua-arroyo-naranjo-profile.png" />
+<meta property="og:url" content="https://bigfunster2026-cloud.github.io/Calesaweb/drivers/lizandro-guzman-hernandez/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#090909" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{
+  --bg:#090909;
+  --panel:#151515;
+  --panel2:#1f1f1f;
+  --text:#f8f2e8;
+  --muted:#d8cab6;
+  --gold:#efb120;
+  --gold2:#ffd369;
+  --blue:#2aabee;
+  --line:rgba(255,255,255,.1);
+  --shadow:0 28px 70px rgba(0,0,0,.38);
+  --max:1040px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  min-height:100vh;
+  font-family:"Outfit",sans-serif;
+  color:var(--text);
+  line-height:1.55;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(239,177,32,.18), transparent 27%),
+    radial-gradient(circle at 86% 10%, rgba(42,171,238,.14), transparent 24%),
+    linear-gradient(180deg,#050505 0%,#0d0d0d 48%,#080808 100%);
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.11;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:58px 58px;
+  mask-image:linear-gradient(180deg, #000, transparent 88%);
+}
+img{display:block;max-width:100%}
+.page{
+  width:min(92%,var(--max));
+  margin:0 auto;
+  padding:34px 0 48px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:34px;
+}
+.brand img{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  object-fit:contain;
+  background:#000;
+  padding:2px;
+  box-shadow:var(--shadow);
+}
+.brand strong{
+  display:block;
+  font-family:"Space Grotesk",sans-serif;
+  letter-spacing:.08em;
+  font-size:1.1rem;
+}
+.brand span{
+  color:var(--gold2);
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:800;
+}
+.landing{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:32px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.03)),
+    linear-gradient(180deg,rgba(239,177,32,.08),rgba(42,171,238,.035));
+  box-shadow:var(--shadow);
+}
+.landing::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 50% 0%,rgba(255,211,105,.2),transparent 32%);
+}
+.profile-hero{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:26px;
+  justify-items:center;
+  text-align:center;
+  padding:42px clamp(20px,5vw,64px) 34px;
+}
+.profile-photo-wrap{
+  position:relative;
+  width:190px;
+  height:190px;
+}
+.profile-photo{
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  object-fit:cover;
+  border:5px solid rgba(255,211,105,.82);
+  box-shadow:0 22px 50px rgba(0,0,0,.42);
+  background:#000;
+}
+.verification-seal{
+  position:absolute;
+  right:2px;
+  bottom:12px;
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#07131b;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  border:4px solid rgba(8,8,8,.95);
+  box-shadow:0 14px 32px rgba(0,0,0,.36);
+}
+.verification-seal .fa-certificate{
+  position:absolute;
+  inset:6px;
+  width:calc(100% - 12px);
+  height:calc(100% - 12px);
+  color:var(--gold2);
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.18));
+}
+.verification-seal .fa-asterisk{
+  position:relative;
+  z-index:1;
+  color:#111;
+  font-size:1.05rem;
+  font-weight:900;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid rgba(239,177,32,.36);
+  background:rgba(239,177,32,.12);
+  color:var(--gold2);
+  border-radius:999px;
+  padding:10px 16px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-size:.78rem;
+}
+h1{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(3.3rem,8vw,6.8rem);
+  line-height:.9;
+  letter-spacing:0;
+  max-width:760px;
+}
+.subtitle{
+  max-width:760px;
+  color:var(--muted);
+  font-size:clamp(1.08rem,2vw,1.28rem);
+}
+.vehicle-frame{
+  position:relative;
+  z-index:1;
+  width:min(88%,820px);
+  margin:0 auto;
+  border-radius:28px;
+  padding:12px;
+  background:linear-gradient(135deg,rgba(239,177,32,.38),rgba(42,171,238,.2));
+  box-shadow:0 26px 70px rgba(0,0,0,.35);
+}
+.vehicle-frame img{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.18);
+}
+.content{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);
+  gap:22px;
+  padding:34px clamp(20px,5vw,64px) 46px;
+}
+.panel{
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(8,8,8,.58);
+  border-radius:24px;
+  padding:24px;
+}
+.panel h2{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(1.45rem,3vw,2.1rem);
+  margin-bottom:14px;
+}
+.facts{
+  display:grid;
+  gap:16px;
+}
+.fact{
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:12px;
+  align-items:start;
+  color:var(--muted);
+}
+.fact i{
+  color:var(--gold2);
+  margin-top:4px;
+}
+.fact strong{
+  display:block;
+  color:var(--text);
+  margin-bottom:2px;
+}
+.copy{
+  display:grid;
+  gap:20px;
+}
+.copy p{color:var(--muted);font-size:1.06rem}
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.tag{
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.06);
+  border-radius:999px;
+  padding:9px 12px;
+  color:#f4e9d6;
+  font-weight:700;
+  font-size:.92rem;
+}
+.footer-note{
+  color:rgba(248,242,232,.58);
+  text-align:center;
+  margin-top:22px;
+  font-size:.92rem;
+}
+@media (max-width:820px){
+  .content{grid-template-columns:1fr}
+  .profile-photo-wrap,.profile-photo{width:160px;height:160px}
+  .verification-seal{width:46px;height:46px;right:-1px;bottom:8px}
+  .vehicle-frame{width:92%}
+}
+@media (max-width:560px){
+  .page{width:94%;padding-top:22px}
+  .brand{margin-bottom:22px}
+  .landing{border-radius:24px}
+  .profile-hero{padding:30px 18px 24px}
+  .content{padding:26px 16px 32px}
+  .panel{padding:20px}
+  h1{font-size:clamp(3rem,17vw,4.8rem)}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="brand">
+    <img src="../58682e9d-95ee-48ff-8b35-dfb842437ada.png" alt="Calesa" />
+    <div>
+      <strong>CALESA</strong>
+      <span>Chofer verificado</span>
+    </div>
+  </div>
+
+  <article class="landing" id="driverLanding"></article>
+  <p class="footer-note">Calesa muestra solo informacion autorizada para uso publico.</p>
+</main>
+
+<script src="./data.js?v=20260607-lizandro-url"></script>
+<script>
+const drivers = (window.CALESA_VERIFIED_DRIVERS || []).filter((driver) => driver.active);
+const params = new URLSearchParams(location.search);
+const requestedId = params.get("id") || document.documentElement.dataset.driverId;
+const driver = drivers.find((item) => item.id === requestedId) || drivers[0];
+const landing = document.getElementById("driverLanding");
+
+function text(value, fallback = "") {
+  return String(value || fallback);
+}
+
+function tagList(items) {
+  return (items || []).map((item) => `<span class="tag">${text(item)}</span>`).join("");
+}
+
+if (driver) {
+  document.title = `${text(driver.name)} | Chofer Calesa`;
+  const photo = driver.photo || "../58682e9d-95ee-48ff-8b35-dfb842437ada.png";
+  const vehiclePhoto = driver.vehiclePhoto || "";
+  landing.innerHTML = `
+    <section class="profile-hero">
+      <div class="profile-photo-wrap">
+        <img class="profile-photo" src="${photo}" alt="${text(driver.name)}" />
+        <span class="verification-seal" aria-label="Verificado por Calesa">
+          <i class="fa-solid fa-certificate"></i>
+          <i class="fa-solid fa-asterisk"></i>
+        </span>
+      </div>
+      <span class="badge"><i class="fa-solid fa-circle-check"></i> Chofer verificado por Calesa</span>
+      <h1>${text(driver.name, "Chofer Calesa")}</h1>
+      <p class="subtitle">${text(driver.headline, "Chofer verificado por Calesa")}</p>
+    </section>
+
+    ${vehiclePhoto ? `<figure class="vehicle-frame"><img src="${vehiclePhoto}" alt="${text(driver.vehicle, "Vehiculo del chofer")}" /></figure>` : ""}
+
+    <section class="content">
+      <aside class="panel">
+        <h2>Datos del chofer</h2>
+        <div class="facts">
+          <div class="fact"><i class="fa-solid fa-location-dot"></i><span><strong>Zona</strong>${text(driver.city, "Cuba")}</span></div>
+          <div class="fact"><i class="fa-solid fa-car-side"></i><span><strong>Vehiculo</strong>${text(driver.vehicle, "Vehiculo registrado")}</span></div>
+          <div class="fact"><i class="fa-solid fa-calendar-check"></i><span><strong>Verificado desde</strong>${text(driver.verifiedSince, "Calesa")}</span></div>
+          <div class="fact"><i class="fa-solid fa-language"></i><span><strong>Idioma</strong>${(driver.languages || []).join(", ") || "Espanol"}</span></div>
+        </div>
+      </aside>
+
+      <section class="panel copy">
+        <div>
+          <h2>Informacion</h2>
+          <p>${text(driver.bio, "Perfil publico de chofer verificado por Calesa.")}</p>
+        </div>
+        <div>
+          <h2>Vehiculo</h2>
+          <p>${text(driver.vehicleDetails, driver.vehicle || "Vehiculo registrado en Calesa.")}</p>
+        </div>
+        <div>
+          <h2>Zonas de trabajo</h2>
+          <div class="tags">${tagList(driver.serviceZones)}</div>
+        </div>
+        <div>
+          <h2>Fortalezas</h2>
+          <div class="tags">${tagList(driver.strengths)}</div>
+        </div>
+      </section>
+    </section>
+  `;
+} else {
+  landing.innerHTML = `
+    <section class="profile-hero">
+      <span class="badge"><i class="fa-solid fa-circle-info"></i> Calesa</span>
+      <h1>Perfil no disponible</h1>
+      <p class="subtitle">Todavia no hay datos publicados para este chofer.</p>
+    </section>
+  `;
+}
+</script>
+</body>
+</html>
