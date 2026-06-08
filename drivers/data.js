@@ -36,7 +36,7 @@ window.CALESA_VERIFIED_DRIVERS = [
     vehiclePhoto: "assets/restringid-murazaky-xs3.png"
   },
   {
-    id: "managua-arroyo-naranjo",
+    id: "lizandro-guzman-hernandez",
     active: true,
     name: "Lizandro Guzman Hernandez",
     headline: "Chofer verificado de Calesa en Managua, Arroyo Naranjo",
