@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuki Pop Studio - Branding e Instagram para belleza en Cuba</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #050505;
+  --charcoal: #111114;
+  --panel: #18151d;
+  --panel-2: #211629;
+  --white: #ffffff;
+  --soft: #f6f2fb;
+  --muted: #bcb2c8;
+  --dim: #81748d;
+  --purple: #7b22ff;
+  --purple-2: #b033ff;
+  --purple-3: #e4c4ff;
+  --pink: #ff3da9;
+  --line: rgba(255,255,255,0.12);
+  --purple-line: rgba(176,51,255,0.36);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+
+.topline {
+  height: 5px;
+  background: linear-gradient(90deg, var(--purple), var(--white), var(--pink), var(--purple));
+}
+
+.cover {
+  min-height: 96vh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.8fr);
+  align-items: stretch;
+  border-bottom: 1px solid var(--line);
+}
+.cover-copy {
+  padding: 72px clamp(24px, 6vw, 88px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(135deg, rgba(123,34,255,0.22), transparent 42%),
+    linear-gradient(180deg, #050505, #101014 70%, #160b20);
+}
+.eyebrow,
+.mono {
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 11px;
+  color: var(--purple-3);
+}
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 42px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+.brand-mark::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: var(--purple);
+  box-shadow: 8px 8px 0 var(--white), 16px 0 0 var(--pink);
+  transform: rotate(-10deg);
+}
+h1 {
+  font-family: "Bebas Neue", Inter, sans-serif;
+  font-size: clamp(70px, 11vw, 146px);
+  line-height: 0.86;
+  letter-spacing: 0;
+  max-width: 760px;
+}
+h1 span {
+  display: block;
+  color: var(--purple-2);
+  text-shadow: 4px 4px 0 rgba(255,255,255,0.13);
+}
+.cover-lede {
+  max-width: 640px;
+  margin-top: 28px;
+  color: var(--soft);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+}
+.cover-note {
+  max-width: 620px;
+  margin-top: 18px;
+  color: var(--muted);
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 46px;
+}
+.meta-item {
+  border: 1px solid var(--line);
+  padding: 16px;
+  background: rgba(255,255,255,0.035);
+}
+.meta-label {
+  font-family: "DM Mono", monospace;
+  color: var(--dim);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.meta-value {
+  margin-top: 6px;
+  font-weight: 800;
+  color: var(--white);
+}
+.cover-image {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+.cover-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cover-badge {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  right: 24px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(5,5,5,0.78);
+  backdrop-filter: blur(12px);
+}
+.cover-badge strong {
+  display: block;
+  font-size: 20px;
+}
+.cover-badge span {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 12px clamp(18px, 5vw, 72px);
+  background: rgba(5,5,5,0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.nav a {
+  white-space: nowrap;
+  border: 1px solid var(--line);
+  padding: 9px 12px;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+.nav a:hover { color: var(--white); border-color: var(--purple-line); }
+
+.section {
+  padding: 76px clamp(22px, 6vw, 88px);
+  border-bottom: 1px solid var(--line);
+}
+.section:nth-of-type(odd) { background: #09070c; }
+.section-header {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 800px);
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 38px;
+}
+.section-number {
+  font-family: "Bebas Neue", sans-serif;
+  color: rgba(176,51,255,0.34);
+  font-size: 72px;
+  line-height: 0.8;
+}
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+.section-intro {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 760px;
+}
+
+.grid-2,
+.grid-3,
+.grid-4 {
+  display: grid;
+  gap: 18px;
+}
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.025));
+  padding: 22px;
+}
+.card.purple {
+  border-color: var(--purple-line);
+  background: linear-gradient(180deg, rgba(123,34,255,0.22), rgba(255,61,169,0.08));
+}
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.card p,
+.card li {
+  color: var(--muted);
+}
+.card ul,
+.content-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.content-list li {
+  padding-left: 22px;
+  position: relative;
+  color: var(--muted);
+}
+.content-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 8px;
+  background: var(--purple-2);
+}
+
+.name-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.name-pill {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--black);
+  padding: 12px 14px;
+  font-weight: 900;
+  text-align: center;
+}
+.name-pill.best {
+  background: var(--purple);
+  color: var(--white);
+  border-color: var(--purple);
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.swatch {
+  min-height: 126px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border: 1px solid var(--line);
+  font-weight: 800;
+}
+.swatch span {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  color: inherit;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+.s-black { background: #050505; }
+.s-white { background: #ffffff; color: #050505; }
+.s-purple { background: #7b22ff; }
+.s-violet { background: #b033ff; }
+.s-pink { background: #ff3da9; }
+
+.photo-strip {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 0.8fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.photo-frame {
+  min-height: 560px;
+  border: 1px solid var(--line);
+  background: var(--charcoal);
+  overflow: hidden;
+}
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.photo-note {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--purple-line);
+  background: linear-gradient(160deg, rgba(123,34,255,0.24), rgba(255,61,169,0.10));
+}
+.photo-note h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 48px;
+  line-height: 0.95;
+  margin-bottom: 16px;
+}
+.tag {
+  display: inline-block;
+  width: fit-content;
+  background: var(--white);
+  color: var(--black);
+  padding: 4px 8px;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.day {
+  min-height: 190px;
+  padding: 16px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.day strong {
+  display: block;
+  color: var(--purple-3);
+  margin-bottom: 8px;
+}
+.day p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.script-box {
+  border: 1px solid var(--purple-line);
+  background: #100915;
+  padding: 20px;
+  font-size: 16px;
+}
+.script-box strong {
+  color: var(--white);
+}
+.script-box p { color: var(--muted); margin-top: 8px; }
+
+.footer {
+  padding: 44px clamp(22px, 6vw, 88px);
+  background: var(--white);
+  color: var(--black);
+}
+.footer h2 { color: var(--black); }
+.footer p { max-width: 760px; font-weight: 700; margin-top: 12px; }
+
+@media (max-width: 980px) {
+  .cover,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .photo-strip,
+  .section-header {
+    grid-template-columns: 1fr;
+  }
+  .cover-copy { padding: 46px 22px; }
+  .cover-image { min-height: 520px; }
+  .cover-meta,
+  .palette,
+  .name-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .calendar { grid-template-columns: 1fr; }
+  .photo-frame { min-height: 460px; }
+}
+
+@media (max-width: 560px) {
+  .cover-meta,
+  .palette,
+  .name-list {
+    grid-template-columns: 1fr;
+  }
+  .section { padding: 54px 18px; }
+  .section-number { font-size: 48px; }
+  .day { min-height: auto; }
+}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+
+<header class="cover" id="inicio">
+  <div class="cover-copy">
+    <div>
+      <div class="brand-mark">KUKI POP STUDIO</div>
+      <div class="eyebrow">Beauty social commerce / Cuba + Miami vibe</div>
+      <h1>Kuki <span>vende belleza</span></h1>
+      <p class="cover-lede">Una marca personal simple, llamativa y vendedora para mover productos de belleza por Instagram, WhatsApp y recomendaciones.</p>
+      <p class="cover-note">El objetivo no es verse como una marca de lujo. El objetivo es verse confiable, entretenida, deseable y activa: la amiga que prueba, recomienda, consigue y vende.</p>
+      <div class="cover-meta">
+        <div class="meta-item">
+          <div class="meta-label">Paleta</div>
+          <div class="meta-value">Negro / Blanco / Morado</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Publico</div>
+          <div class="meta-value">Manicuristas + salones</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Estilo</div>
+          <div class="meta-value">Miami farandula</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-image">
+    <img src="kuki-brand-assets/kuki-hero.png" alt="Imagen de campaña para Kuki Pop Studio">
+    <div class="cover-badge">
+      <strong>Recomendacion principal: Kuki Pop Studio</strong>
+      <span>Corto, memorable, juvenil y flexible para belleza, uñas, contenido y venta social.</span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav">
+  <a href="#nombre">01 Nombre</a>
+  <a href="#identidad">02 Identidad</a>
+  <a href="#imagenes">03 Imagenes</a>
+  <a href="#instagram">04 Instagram</a>
+  <a href="#ia">05 IA</a>
+  <a href="#cuba">06 Cuba</a>
+  <a href="#plan">07 Plan</a>
+</nav>
+
+<section class="section" id="nombre">
+  <div class="section-header">
+    <div class="section-number">01</div>
+    <div>
+      <div class="eyebrow">Naming</div>
+      <h2>Nombre con calle, no con museo</h2>
+      <p class="section-intro">Para este publico, nombres demasiado finos como Atelier o Luxe pueden sentirse falsos. La marca necesita sonar fresca, social, facil de recordar y buena para Instagram.</p>
+    </div>
+  </div>
+  <div class="name-list">
+    <div class="name-pill best">Kuki Pop</div>
+    <div class="name-pill best">Kuki Pop Studio</div>
+    <div class="name-pill">Kuki Beauty</div>
+    <div class="name-pill">Kuki Glam</div>
+    <div class="name-pill">Kuki Trend</div>
+    <div class="name-pill">Kuki Social</div>
+    <div class="name-pill">Kuki Glow</div>
+    <div class="name-pill">Kuki Nails</div>
+    <div class="name-pill">Kuki Shop</div>
+    <div class="name-pill">Kuki Bella</div>
+  </div>
+  <div class="grid-3" style="margin-top:18px">
+    <div class="card purple">
+      <h3>Mejor opcion</h3>
+      <p><strong>Kuki Pop Studio</strong> porque puede vender productos, hacer contenido, ayudar a salones y crecer a otras categorias sin quedar encerrada solo en uñas.</p>
+    </div>
+    <div class="card">
+      <h3>Si quiere mas venta</h3>
+      <p><strong>Kuki Beauty Shop</strong>. Es directo y facil, pero menos marca personal. Bueno si lo primero sera vender inventario rapido.</p>
+    </div>
+    <div class="card">
+      <h3>Si quiere mas Instagram</h3>
+      <p><strong>Kuki Pop</strong>. Corto, pegajoso y con energia. Perfecto para Reels, lives, sorteos y colaboraciones.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="identidad">
+  <div class="section-header">
+    <div class="section-number">02</div>
+    <div>
+      <div class="eyebrow">Visual system</div>
+      <h2>Negro, blanco y morado con actitud</h2>
+      <p class="section-intro">La identidad debe sentirse como una pagina que vende: contraste fuerte, textos grandes, fotos de ella, productos visibles, precios claros y llamados por WhatsApp.</p>
+    </div>
+  </div>
+  <div class="palette">
+    <div class="swatch s-black">Black Flash<span>#050505</span></div>
+    <div class="swatch s-white">White Pop<span>#FFFFFF</span></div>
+    <div class="swatch s-purple">Kuki Purple<span>#7B22FF</span></div>
+    <div class="swatch s-violet">Violet Light<span>#B033FF</span></div>
+    <div class="swatch s-pink">Farandula Pink<span>#FF3DA9</span></div>
+  </div>
+  <div class="grid-4" style="margin-top:18px">
+    <div class="card"><h3>Logo</h3><p>Wordmark fuerte: KUKI POP. Letras grandes, simples, con una K reconocible.</p></div>
+    <div class="card"><h3>Fotos</h3><p>Ella tiene que aparecer. La confianza vende mas que un logo bonito.</p></div>
+    <div class="card"><h3>Copy</h3><p>Frases cortas, precios visibles, urgencia real: "me quedan 6", "entra esta semana".</p></div>
+    <div class="card"><h3>Contenido</h3><p>Reels de prueba, antes/despues, combos, entregas, testimonios y lives.</p></div>
+  </div>
+</section>
+
+<section class="section" id="imagenes">
+  <div class="section-header">
+    <div class="section-number">03</div>
+    <div>
+      <div class="eyebrow">Campaign images</div>
+      <h2>Ella debe ser la cara de venta</h2>
+      <p class="section-intro">Para Cuba y belleza, la gente compra por confianza. La foto de producto sola ayuda, pero la cara de ella explicando, probando y recomendando convierte mejor.</p>
+    </div>
+  </div>
+  <div class="photo-strip">
+    <div class="photo-frame"><img src="kuki-brand-assets/kuki-reference.jpeg" alt="Referencia original de Kuki"></div>
+    <div class="photo-frame"><img src="kuki-brand-assets/kuki-reel.png" alt="Ejemplo de contenido para reel de belleza"></div>
+    <div class="photo-note">
+      <span class="tag">Como usarla</span>
+      <h3>Mas selfie, menos catalogo frio</h3>
+      <ul class="content-list">
+        <li>Usar su cara en portada de Reels y Stories.</li>
+        <li>Mostrar producto en mano para que se vea real.</li>
+        <li>Combinar belleza + personalidad + disponibilidad.</li>
+        <li>Guardar una estetica fija: negro, blanco, morado, flash y texto grande.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="instagram">
+  <div class="section-header">
+    <div class="section-number">04</div>
+    <div>
+      <div class="eyebrow">Instagram playbook</div>
+      <h2>Instagram tiene que vender, no decorar</h2>
+      <p class="section-intro">La cuenta debe parecer activa todos los dias. En Cuba, la venta se cierra por DM y WhatsApp, asi que cada post debe llevar a conversacion.</p>
+    </div>
+  </div>
+  <div class="grid-3">
+    <div class="card purple">
+      <h3>Bio recomendada</h3>
+      <p>Beauty finds para Cuba<br>Uñas, maquillaje y cuidado personal<br>Pedidos por DM / WhatsApp<br>Entregas y disponibilidad semanal</p>
+    </div>
+    <div class="card">
+      <h3>Highlights</h3>
+      <ul class="content-list">
+        <li>Disponible</li>
+        <li>Combos</li>
+        <li>Clientes</li>
+        <li>Entregas</li>
+        <li>Salones</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Regla de venta</h3>
+      <p>Cada publicacion necesita una accion clara: "manda DM", "reserva", "pregunta precio", "separa el tuyo" o "pide combo para salon".</p>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="script-box">
+      <strong>Guion para Reel corto</strong>
+      <p>"Mira lo que entro esta semana. Si eres manicurista o tienes salon, este combo te resuelve para varias clientas. Me escribes KUKI y te digo precio y disponibilidad."</p>
+    </div>
+    <div class="script-box">
+      <strong>Guion para Story</strong>
+      <p>"Me quedan pocas unidades de este tono. Para separar: nombre, cantidad y zona. Si compras para salon te armo combo."</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ia">
+  <div class="section-header">
+    <div class="section-number">05</div>
+    <div>
+      <div class="eyebrow">AI workflow</div>
+      <h2>IA para parecer mas grande sin gastar mas</h2>
+      <p class="section-intro">La IA no reemplaza la venta. La acelera: mejores fotos, mejores textos, respuestas rapidas y calendario constante.</p>
+    </div>
+  </div>
+  <div class="grid-4">
+    <div class="card"><h3>Fotos</h3><p>Convertir selfies y productos en piezas limpias para posts, portadas y flyers.</p></div>
+    <div class="card"><h3>Copy</h3><p>Crear captions con tono cubano, urgencia, precio y llamada a DM.</p></div>
+    <div class="card"><h3>DMs</h3><p>Guardar respuestas rapidas para precio, entrega, combos y disponibilidad.</p></div>
+    <div class="card"><h3>Inventario</h3><p>Publicar "disponible hoy" con pocas unidades y actualizar cuando se agote.</p></div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="script-box">
+      <strong>Prompt para caption</strong>
+      <p>Escribe un caption corto para vender [producto] a manicuristas en Cuba. Tono cercano, farandula, no fino. Incluye urgencia real, beneficio, precio opcional y llamada a escribir por DM.</p>
+    </div>
+    <div class="script-box">
+      <strong>Prompt para calendario</strong>
+      <p>Dame 7 ideas de Reels para vender productos de belleza en Cuba usando mi cara, demos rapidas, combos y testimonios. Cada idea debe tener gancho, escena y CTA.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="cuba">
+  <div class="section-header">
+    <div class="section-number">06</div>
+    <div>
+      <div class="eyebrow">Cuba sales strategy</div>
+      <h2>La estrategia real: confianza + escasez + WhatsApp</h2>
+      <p class="section-intro">Para vender belleza en Cuba, no basta con verse bonita. Hay que demostrar que el producto existe, que llega, que funciona y que se puede separar facil.</p>
+    </div>
+  </div>
+  <div class="grid-3">
+    <div class="card purple"><h3>Manicuristas</h3><p>Vender combos por tonos, geles, limas, decoracion, tips, esmaltes y productos que ayudan a atender mas clientas.</p></div>
+    <div class="card"><h3>Salones</h3><p>Ofrecer paquetes por volumen, reposicion semanal y prioridad cuando entra mercancia nueva.</p></div>
+    <div class="card"><h3>Consumidor final</h3><p>Usar productos faciles de entender: gloss, skincare, perfumes, maquillaje, sets pequenos y regalos.</p></div>
+  </div>
+  <div class="grid-2" style="margin-top:18px">
+    <div class="card">
+      <h3>Lo que debe evitar</h3>
+      <ul class="content-list">
+        <li>Publicar solo fotos de Pinterest.</li>
+        <li>No decir si esta disponible.</li>
+        <li>Responder tarde los DMs.</li>
+        <li>Verse demasiado fina para un publico que compra por confianza y precio.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Lo que si vende</h3>
+      <ul class="content-list">
+        <li>Video corto probando el producto.</li>
+        <li>Foto real de inventario.</li>
+        <li>Testimonio de clienta o salon.</li>
+        <li>Combo claro con precio y cantidad limitada.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="plan">
+  <div class="section-header">
+    <div class="section-number">07</div>
+    <div>
+      <div class="eyebrow">7-day content sprint</div>
+      <h2>Primera semana para activar ventas</h2>
+      <p class="section-intro">No necesita una marca perfecta para empezar. Necesita publicar, medir respuestas y descubrir que productos la gente pide de verdad.</p>
+    </div>
+  </div>
+  <div class="calendar">
+    <div class="day"><strong>Lunes</strong><p>Reel: "lo que entro esta semana". Mostrar 3 productos y pedir DM.</p></div>
+    <div class="day"><strong>Martes</strong><p>Story encuesta: uñas, maquillaje o skincare. Capturar demanda.</p></div>
+    <div class="day"><strong>Miercoles</strong><p>Post carrusel: combo para manicuristas con beneficio y disponibilidad.</p></div>
+    <div class="day"><strong>Jueves</strong><p>Reel demo: probar un producto en camara, sin editar demasiado.</p></div>
+    <div class="day"><strong>Viernes</strong><p>Live corto: responder precios, zonas, pedidos y separar unidades.</p></div>
+    <div class="day"><strong>Sabado</strong><p>Story de clientes: capturas, entregas, bolsas, mensajes y reposts.</p></div>
+    <div class="day"><strong>Domingo</strong><p>Lista "proxima entrada": que pidan lo que quieren antes de comprar inventario.</p></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="eyebrow" style="color:#7b22ff">Decision practica</div>
+  <h2>Construir ahora, pero simple</h2>
+  <p>Clasificacion: A) Build now. La version rentable no es una marca gigante; es una cuenta de venta social con inventario pequeno, rostro visible, DM rapido, combos para salones y prueba semanal de demanda.</p>
+</footer>
+</body>
+</html>
